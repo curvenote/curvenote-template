@@ -3,7 +3,7 @@ import logging
 import os
 from pathlib import Path, PurePath
 from shutil import copyfile
-
+from .deprecated import show_notice
 import typer
 import yaml
 
@@ -69,6 +69,7 @@ def build(
         help=("Should image assets will be copied into the target folder?"),
     ),
 ):
+    show_notice()
     typer.echo(f"Target folder: {output_path}")
 
     typer.echo(f"Content path: {content_path}")

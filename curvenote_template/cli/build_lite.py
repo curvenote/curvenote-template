@@ -4,7 +4,7 @@ from shutil import copyfile
 
 import typer
 import yaml
-
+from .deprecated import show_notice
 from .. import TemplateRenderer
 
 
@@ -66,6 +66,7 @@ def build_lite(
         ),
     ),
 ):
+    show_notice()
     typer.echo(f"Output folder: {output_tex}")
     typer.echo(f"Doc Model file: {data_yml}")
     typer.echo(f"Content file: {content}")

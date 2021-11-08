@@ -7,6 +7,7 @@ from ..version import __version__
 from .build import build
 from .build_lite import build_lite
 from .validate import validate
+from .deprecated import show_notice
 
 logger = logging.getLogger()
 
@@ -54,4 +55,5 @@ def main(
         None, "--version", callback=version_callback, is_eager=True
     )
 ):
+    show_notice()
     return

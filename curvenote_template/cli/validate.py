@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 import typer
+from .deprecated import show_notice
 
 from ..TemplateLoader import TemplateLoader
 from ..TemplateOptions import TemplateOptions
@@ -18,6 +19,7 @@ def validate(
         resolve_path=True,
     )
 ):
+    show_notice()
     try:
         TemplateLoader.validate(str(template_path))
     except ValueError as err:
